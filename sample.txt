@@ -1,0 +1,14 @@
+egg
+pickle
+pig
+apple
+chair
+fish
+book
+fox
+desk
+zoo
+plant
+grape
+nice
+big
