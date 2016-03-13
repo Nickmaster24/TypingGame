@@ -9,15 +9,18 @@ import java.io.IOException;
 public class GameController {
 
     public static void main(String[] args) {
-        WordSource curWords = new WordSource();
-        try {
-            curWords.addWords("sample.txt");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        String lastInput = "";
+        while (!lastInput.toLowerCase().equals("exit")) {
+            WordSource curWords = new WordSource();
+            try {
+                curWords.addWords("sample.txt");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
-        ConsoleInputTask inputTask = new ConsoleInputTask(curWords);
-        new Thread(inputTask).start();
-        new Thread(new TimerTask(inputTask, null, 10000)).run();
+            ConsoleInputTask inputTask = new ConsoleInputTask(curWords);
+            new Thread(inputTask).start();
+            new Thread(new TimerTask(inputTask, null, 10000)).run();
+        }
     }
 }
